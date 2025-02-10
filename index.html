@@ -49,17 +49,18 @@
         <a href="https://www.linkedin.com/in/víctorsouto" target="_blank" style="display: inline-block; background-color: blue; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-size: 1.2rem;">LinkedIn</a>
         <img src="imagen.jpg" alt="Descripción de la imagen" style="width: 300px; margin-top: 20px;">
     </div>
+    <div class="footer" style="font-size: 0.5rem; position: relative; margin-top: 50px;">© 2024 Victor Souto - Todos los derechos reservados</div>
     <div id="recipePopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.3); text-align: center; width: 80%; max-width: 400px;">
         <h2>Receta de Pasta a la Matriciana</h2>
         <p id="recipeText" style="font-size: 1.2rem;"></p>
         <button onclick="nextStep()" style="margin-top: 10px; padding: 10px 20px; font-size: 1rem; background-color: red; color: white; border: none; border-radius: 5px; cursor: pointer;">Siguiente paso</button>
         <button onclick="closePopup()" style="margin-top: 10px; padding: 10px 20px; font-size: 1rem; background-color: gray; color: white; border: none; border-radius: 5px; cursor: pointer;">Cerrar</button>
     </div>
-    <button onclick="startRecipe()" style="margin-top: 20px; padding: 10px 20px; font-size: 1.2rem; background-color: red; color: white; border: none; border-radius: 5px; cursor: pointer;">Empezar Receta</button>
+    <button onclick="Emmatriciana()" style="margin-top: 20px; padding: 10px 20px; font-size: 1.2rem; background-color: red; color: white; border: none; border-radius: 5px; cursor: pointer; display: block;">Empezar Receta</button>
     <script>
         const steps = [
             "1. Cocina la panceta en una sartén hasta que esté dorada.",
-            "2. Agrega el tomate triturado y cocina a fuego lento durante 10 minutos.",
+            "2. Agrega el tomate triturado y un poco de guindilla y cocina a fuego lento durante 10 minutos.",
             "3. Cocina la pasta en agua con sal hasta que esté al dente.",
             "4. Mezcla la pasta con la salsa y remueve bien.",
             "5. Sirve con queso pecorino rallado por encima. ¡Disfruta!"
@@ -87,6 +88,5 @@
             document.getElementById('recipePopup').style.display = 'none';
         }
     </script>
-    <div class="footer" style="font-size: 0.5rem;">© 2024 Victor Souto - Todos los derechos reservados</div>
 </body>
 </html>

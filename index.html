@@ -3,14 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi primera web</title>
+    <title>Bienvenido a VictorSouto.es</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-        h1 { color: blue; }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: white;
+            color: black;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            animation: fadeIn 1.5s ease-in-out;
+            color: blue;
+        }
+        p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            line-height: 1.5;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
-    <h1>¡Hola, mundo!</h1>
-    <p>Esta es mi primera página web gratis usando GitHub Pages.</p>
+    <div class="container">
+        <h1>Hola, mundo. Bienvenidos a mi web</h1>
+        <img src="imagen.jpg" alt="Descripción de la imagen" style="width: 300px; margin-top: 20px;">
+        <p>LinkedIn: www.linkedin.com/víctorsouto </p>
+    </div>
+    <div class="footer">© 2024 Victor Souto - Todos los derechos reservados</div>
 </body>
 </html>

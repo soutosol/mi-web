@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenido a VictorSouto.es</title>
+    <title>Bienvenida Emma</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -41,11 +41,30 @@
             bottom: 20px;
             font-size: 0.5rem;
         }
+            .recipe-button {
+            margin-top: 5px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 5px auto;
+        }
+            .countdown {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+            color: red;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Hola, Emma. Bienvenida a mi web</h1>
+        <div class="countdown" id="countdown">Media maratón en: </div>
+        <h1>Hola, Emma.</h1>
         <a href="https://www.linkedin.com/in/víctorsouto" target="_blank" style="display: inline-block; background-color: blue; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-size: 1.2rem;">LinkedIn</a>
         <img src="mi-imagen.jpg" alt="Descripción de la imagen" style="width: 300px; margin-top: 20px;">
     </div>
@@ -56,11 +75,11 @@
         <button onclick="nextStep()" style="margin-top: 10px; padding: 10px 20px; font-size: 1rem; background-color: red; color: white; border: none; border-radius: 5px; cursor: pointer;">Siguiente paso</button>
         <button onclick="closePopup()" style="margin-top: 10px; padding: 10px 20px; font-size: 1rem; background-color: gray; color: white; border: none; border-radius: 5px; cursor: pointer;">Cerrar</button>
     </div>
-    <button onclick="startRecipe()" style="margin-top: 20px; padding: 10px 20px; font-size: 1.2rem; background-color: green; color: white; border: none; border-radius: 5px; cursor: pointer; display: block; margin: 20px auto;">Emmatriciana</button>
+    <button onclick="startRecipe()" class="recipe-button">Emmatriciana</button>
     <script>
         const steps = [
             "1. Cocina la panceta en una sartén hasta que esté dorada.",
-            "2. Agrega el tomate triturado y guindilla y cocina a fuego lento durante 10 minutos.",
+            "2. Agrega el tomate triturado y cocina a fuego lento durante 10 minutos.",
             "3. Cocina la pasta en agua con sal hasta que esté al dente.",
             "4. Mezcla la pasta con la salsa y remueve bien.",
             "5. Sirve con queso pecorino rallado por encima. ¡Disfruta!"
@@ -87,6 +106,22 @@
         function closePopup() {
             document.getElementById('recipePopup').style.display = 'none';
         }
+    </script>
+    <script>
+        function updateCountdown() {
+            const eventDate = new Date("February 16, 2025 09:00:00").getTime();
+            const now = new Date().getTime();
+            const timeLeft = eventDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = `Media maratón en: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+        
+        setInterval(updateCountdown, 1000);
     </script>
 </body>
 </html>
